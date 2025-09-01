@@ -16,7 +16,7 @@
 
 ## 💻 CTFs
 
-
+- **[SnakeCTF](2025/SnakeCTF/README.md)**
 
 ---
 

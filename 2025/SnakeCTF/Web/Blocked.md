@@ -13,6 +13,7 @@ When launching the challenge, we're greeted by an ExpressJS web server that asks
 
 Since this is a white-box web security challenge, the natural first step was to inspect the source code. The most interesting part is the `/protected` route. This **verifies all submitted captchas** and ensures that they were solved in the last 10 seconds before returning the flag. The route validates the 10 captcha tokens using a **Javascript Promise**, so that all checks run concurrently. 
 
+
 ```javascript
 const verificationPromises = solvedCaptchas.map(token => {
     return new Promise((resolve, reject) => {
@@ -61,7 +62,7 @@ await Promise.all(verificationPromises);
 ```
 
 
-This implementation introduces a subtle **race condition**: Each token is first checked for validity, then a hash is computed (which takes some time), and finally, the token is marked invalid to prevent reuse.
+This implementation introduces a subtle **race condition**: Each token is first checked for validity, then a hash is computed (which takes some time), and finally, the token is marked invalid to prevent reuse. <br/>
 Because the checks happen at the same time, **the invalidation step doesn't complete before the other checks start**. This means we can **reuse the same token** 10 times, tricking the server into thinking 10 different captchas were solved.
 
 ***My script:***

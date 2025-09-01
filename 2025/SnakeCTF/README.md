@@ -7,13 +7,11 @@
 ## Solved Challenges
 
 **Web Exploitation**
-/b/locked
-ExploitMe
-Boxbin
-SPAM
 
-**Misc**
+**Misc** <br/>
 [Closed Web Net 2 [30 Solves]](Misc/ClosedWebNet2.md)
 
-**Web**
-[/b/locked [67 Solves]](Web/Blocked.md)
+**Web** <br/>
+[/b/locked [67 Solves]](Web/Blocked.md) <br/>
+[Boxbin [41 Solves]](Web/Boxbin.md) <br/>
+[SPAM [30 Solves]](Web/SPAM.md) <br/>
